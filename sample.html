@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<script
+		  	src='https://code.jquery.com/jquery-3.3.1.min.js'
+		  	integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+		  	crossorigin='anonymous'></script>
+	</head>
+
+	<body>
+		<div id="sample"></div>
+
+		<script>
+			$.getJSON('sample.json', function(data) {
+				console.log(data)
+				var output = "<ul>";
+				$.each(data, function(key,val) {
+					for(var school in val) {
+						// console.log(val[school])
+						$.each(val[school], function(ikey, ival) {
+								for(var i = 0; i < ival.length; i++) {
+									console.log(ival[i].name)
+									output += "<li>"+ival[i].name + " : " + ival[i].subject + "</li>";
+								}
+						})
+					}
+				})
+				output += "</ul>"
+				$('#sample').html(output);
+			})
+			
+			
+		</script>
+		<!-- sample.json and same directory path
+		 [
+				{
+					"STI": {
+						"students": [
+							{
+								"name": "elmer",
+								"subject": "science"
+							},
+							{
+								"name": "dan",
+								"subject": "math"
+							}
+						]
+					}
+				}
+			] -->
+	</body>
+</html>

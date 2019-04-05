@@ -1,0 +1,16 @@
+[
+	{
+		"STI": {
+			"students": [
+				{
+					"name": "elmer",
+					"subject": "science"
+				},
+				{
+					"name": "dan",
+					"subject": "math"
+				}
+			]
+		}
+	}
+]
